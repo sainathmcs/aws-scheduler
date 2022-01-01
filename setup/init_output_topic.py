@@ -1,8 +1,11 @@
 import sys
 
 import boto3
+from botocore import config
+from botocore.config import Config
 
-client = boto3.client('sns')
+my_config = Config(region_name = 'ap-south-1')
+client = boto3.client('sns',config = my_config)
 
 
 if __name__ == '__main__':
